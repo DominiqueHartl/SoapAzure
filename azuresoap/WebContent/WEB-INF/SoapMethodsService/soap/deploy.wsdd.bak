@@ -1,0 +1,41 @@
+<!-- Use this file to deploy some handlers/chains and services      -->
+<!-- Two ways to do this:                                           -->
+<!--   java org.apache.axis.client.AdminClient deploy.wsdd          -->
+<!--      after the axis server is running                          -->
+<!-- or                                                             -->
+<!--   java org.apache.axis.utils.Admin client|server deploy.wsdd   -->
+<!--      from the same directory that the Axis engine runs         -->
+
+<deployment
+    xmlns="http://xml.apache.org/axis/wsdd/"
+    xmlns:java="http://xml.apache.org/axis/wsdd/providers/java">
+
+  <!-- Services from SoapMethodsService WSDL service -->
+
+  <service name="SoapMethods" provider="java:RPC" style="wrapped" use="literal">
+      <parameter name="wsdlTargetNamespace" value="http://soap"/>
+      <parameter name="wsdlServiceElement" value="SoapMethodsService"/>
+      <parameter name="schemaQualified" value="http://soap"/>
+      <parameter name="wsdlServicePort" value="SoapMethods"/>
+      <parameter name="className" value="soap.SoapMethodsSoapBindingImpl"/>
+      <parameter name="wsdlPortType" value="SoapMethods"/>
+      <parameter name="typeMappingVersion" value="1.2"/>
+      <operation name="getWind" qname="operNS:getWind" xmlns:operNS="http://soap" returnQName="retNS:getWindReturn" xmlns:retNS="http://soap" returnType="rtns:double" xmlns:rtns="http://www.w3.org/2001/XMLSchema" soapAction="" >
+      </operation>
+      <operation name="setWind" qname="operNS:setWind" xmlns:operNS="http://soap" soapAction="" >
+        <parameter qname="pns:wind" xmlns:pns="http://soap" type="tns:double" xmlns:tns="http://www.w3.org/2001/XMLSchema"/>
+      </operation>
+      <operation name="getForecast" qname="operNS:getForecast" xmlns:operNS="http://soap" returnQName="retNS:getForecastReturn" xmlns:retNS="http://soap" returnType="rtns:double" xmlns:rtns="http://www.w3.org/2001/XMLSchema" soapAction="" >
+      </operation>
+      <operation name="setForecast" qname="operNS:setForecast" xmlns:operNS="http://soap" soapAction="" >
+        <parameter qname="pns:forecast" xmlns:pns="http://soap" type="tns:double" xmlns:tns="http://www.w3.org/2001/XMLSchema"/>
+      </operation>
+      <operation name="getTemp" qname="operNS:getTemp" xmlns:operNS="http://soap" returnQName="retNS:getTempReturn" xmlns:retNS="http://soap" returnType="rtns:double" xmlns:rtns="http://www.w3.org/2001/XMLSchema" soapAction="" >
+      </operation>
+      <operation name="setTemp" qname="operNS:setTemp" xmlns:operNS="http://soap" soapAction="" >
+        <parameter qname="pns:temp" xmlns:pns="http://soap" type="tns:double" xmlns:tns="http://www.w3.org/2001/XMLSchema"/>
+      </operation>
+      <parameter name="allowedMethods" value="setTemp getWind setForecast setWind getForecast getTemp"/>
+
+  </service>
+</deployment>

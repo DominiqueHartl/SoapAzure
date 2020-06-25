@@ -1,0 +1,366 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wsdl:definitions targetNamespace="http://soap" xmlns:apachesoap="http://xml.apache.org/xml-soap" xmlns:impl="http://soap" xmlns:intf="http://soap" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:wsdlsoap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+<!--WSDL created by Apache Axis version: 1.4
+Built on Apr 22, 2006 (06:55:48 PDT)-->
+ <wsdl:types>
+  <schema elementFormDefault="qualified" targetNamespace="http://soap" xmlns="http://www.w3.org/2001/XMLSchema">
+   <element name="getWind">
+    <complexType/>
+   </element>
+   <element name="getWindResponse">
+    <complexType>
+     <sequence>
+      <element maxOccurs="unbounded" name="getWindReturn" type="xsd:double"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="setWind">
+    <complexType>
+     <sequence>
+      <element maxOccurs="unbounded" name="wind" type="xsd:double"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="setWindResponse">
+    <complexType/>
+   </element>
+   <element name="getForecast">
+    <complexType/>
+   </element>
+   <element name="getForecastResponse">
+    <complexType>
+     <sequence>
+      <element maxOccurs="unbounded" name="getForecastReturn" type="xsd:double"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="setForecast">
+    <complexType>
+     <sequence>
+      <element maxOccurs="unbounded" name="forecast" type="xsd:double"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="setForecastResponse">
+    <complexType/>
+   </element>
+   <element name="getTemp">
+    <complexType/>
+   </element>
+   <element name="getTempResponse">
+    <complexType>
+     <sequence>
+      <element name="getTempReturn" type="xsd:double"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="setTemp">
+    <complexType>
+     <sequence>
+      <element name="temp" type="xsd:double"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="setTempResponse">
+    <complexType/>
+   </element>
+  </schema>
+ </wsdl:types>
+
+   <wsdl:message name="setWindResponse">
+
+      <wsdl:part element="impl:setWindResponse" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="setForecastRequest">
+
+      <wsdl:part element="impl:setForecast" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="getWindResponse">
+
+      <wsdl:part element="impl:getWindResponse" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="setForecastResponse">
+
+      <wsdl:part element="impl:setForecastResponse" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="getForecastRequest">
+
+      <wsdl:part element="impl:getForecast" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="getTempRequest">
+
+      <wsdl:part element="impl:getTemp" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="setWindRequest">
+
+      <wsdl:part element="impl:setWind" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="setTempResponse">
+
+      <wsdl:part element="impl:setTempResponse" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="getWindRequest">
+
+      <wsdl:part element="impl:getWind" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="getTempResponse">
+
+      <wsdl:part element="impl:getTempResponse" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="getForecastResponse">
+
+      <wsdl:part element="impl:getForecastResponse" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="setTempRequest">
+
+      <wsdl:part element="impl:setTemp" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:portType name="SoapMethods">
+
+      <wsdl:operation name="getWind">
+
+         <wsdl:input message="impl:getWindRequest" name="getWindRequest">
+
+       </wsdl:input>
+
+         <wsdl:output message="impl:getWindResponse" name="getWindResponse">
+
+       </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="setWind">
+
+         <wsdl:input message="impl:setWindRequest" name="setWindRequest">
+
+       </wsdl:input>
+
+         <wsdl:output message="impl:setWindResponse" name="setWindResponse">
+
+       </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="getForecast">
+
+         <wsdl:input message="impl:getForecastRequest" name="getForecastRequest">
+
+       </wsdl:input>
+
+         <wsdl:output message="impl:getForecastResponse" name="getForecastResponse">
+
+       </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="setForecast">
+
+         <wsdl:input message="impl:setForecastRequest" name="setForecastRequest">
+
+       </wsdl:input>
+
+         <wsdl:output message="impl:setForecastResponse" name="setForecastResponse">
+
+       </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="getTemp">
+
+         <wsdl:input message="impl:getTempRequest" name="getTempRequest">
+
+       </wsdl:input>
+
+         <wsdl:output message="impl:getTempResponse" name="getTempResponse">
+
+       </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="setTemp">
+
+         <wsdl:input message="impl:setTempRequest" name="setTempRequest">
+
+       </wsdl:input>
+
+         <wsdl:output message="impl:setTempResponse" name="setTempResponse">
+
+       </wsdl:output>
+
+      </wsdl:operation>
+
+   </wsdl:portType>
+
+   <wsdl:binding name="SoapMethodsSoapBinding" type="impl:SoapMethods">
+
+      <wsdlsoap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+
+      <wsdl:operation name="getWind">
+
+         <wsdlsoap:operation soapAction=""/>
+
+         <wsdl:input name="getWindRequest">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:input>
+
+         <wsdl:output name="getWindResponse">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="setWind">
+
+         <wsdlsoap:operation soapAction=""/>
+
+         <wsdl:input name="setWindRequest">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:input>
+
+         <wsdl:output name="setWindResponse">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="getForecast">
+
+         <wsdlsoap:operation soapAction=""/>
+
+         <wsdl:input name="getForecastRequest">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:input>
+
+         <wsdl:output name="getForecastResponse">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="setForecast">
+
+         <wsdlsoap:operation soapAction=""/>
+
+         <wsdl:input name="setForecastRequest">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:input>
+
+         <wsdl:output name="setForecastResponse">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="getTemp">
+
+         <wsdlsoap:operation soapAction=""/>
+
+         <wsdl:input name="getTempRequest">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:input>
+
+         <wsdl:output name="getTempResponse">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="setTemp">
+
+         <wsdlsoap:operation soapAction=""/>
+
+         <wsdl:input name="setTempRequest">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:input>
+
+         <wsdl:output name="setTempResponse">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:output>
+
+      </wsdl:operation>
+
+   </wsdl:binding>
+
+   <wsdl:service name="SoapMethodsService">
+
+      <wsdl:port binding="impl:SoapMethodsSoapBinding" name="SoapMethods">
+
+         <wsdlsoap:address location="http://localhost:8082/azuresoap/services/SoapMethods"/>
+
+      </wsdl:port>
+
+   </wsdl:service>
+
+</wsdl:definitions>
